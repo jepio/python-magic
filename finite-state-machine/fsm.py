@@ -1,7 +1,7 @@
 import numpy as np
 
 
-class Fsm:
+class Fsm(object):
     """
     A base class for all FSM.
     """
@@ -10,6 +10,11 @@ class Fsm:
 
 
 class MyMachine(Fsm):
+    """
+    A machine that searches for the sequence '011' and when it finds one it
+    outputs '1' else '0'.
+    """
+
     def __init__(self):
         self.bit1 = [0, 0]
         self.bit0 = [0, 0]
@@ -24,7 +29,7 @@ class MyMachine(Fsm):
     def bit0_log(self, a):
         self.bit0[1] = not a or self.bit0[0] and not self.bit1[0]
 
-    def loop(self, insequence):
+    def run(self, insequence):
         for bit in insequence:
             self.out_log()
             self.bit1_log(bit)
@@ -33,15 +38,14 @@ class MyMachine(Fsm):
             self.bit0[0] = self.bit0[1]
         return self.out
 
-a = MyMachine()
 
-sequence = np.random.randint(2, size=128).tolist()
-b = a.loop(sequence)
-
-
-print('in:')
-sequence = ''.join(map(str, sequence))
-print(sequence)
-b = ''.join(map(str, b))
-print('out:')
-print(b)
+if __name__ == "__main__":
+    machine = MyMachine()
+    input = np.random.randint(2, size=128).tolist()
+    output = machine.run(input)
+    input = ''.join(map(str, input))
+    output = ''.join(map(str, output))
+    print('In:')
+    print(input)
+    print('Out:')
+    print(output)
