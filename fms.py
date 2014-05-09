@@ -1,8 +1,16 @@
 class Fsm:
+    """
+    A base class for all FSM.
+    """
+    def __init__(self):
+        self.out = []
+
+
+class MyMachine(Fsm):
     def __init__(self):
         self.bit1 = [0, 0]
         self.bit0 = [0, 0]
-        self.out  = []
+        super(MyMachine, self).__init__()
 
     def out_log(self):
         self.out.append(int(self.bit1[0] and not self.bit0[0]))
@@ -22,10 +30,9 @@ class Fsm:
             self.bit0[0] = self.bit0[1]
         return self.out
 
-a = Fsm()
+a = MyMachine()
 import numpy as np
 
-#sequence = [0,0,0,0,1,0,1,0,1,0,1,0,1,1,1,0,1,0,0,0,0]
 sequence = np.random.randint(2,size=128).tolist()
 b = a.loop(sequence)
 
