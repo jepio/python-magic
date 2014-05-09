@@ -1,8 +1,6 @@
 python-magic
-============
+===========
 
-A FINITE STATE MACHINE python simulator, which allows you to write your own machines. This example implements a machine that looks for the sequence '011' in an input signal and responds with a '1' when it finds one.
-You can use the example class MyMachine to write your own machine. 
-To run execute 'python fms.py'
+A library of small python programs I have written to test phenomena I learned during my master studies.
 
-Requires numpy
+I will update this repository once I process old code to make it suitable for upload.
