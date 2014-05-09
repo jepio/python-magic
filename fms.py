@@ -29,15 +29,15 @@ import numpy as np
 sequence = np.random.randint(2,size=128).tolist()
 b = a.loop(sequence)
 
-
+"""
 for i in range(128):
     print(sequence[i],b[i])
-
 """
+
 print('in:')
 sequence = ''.join(map(str,sequence))
 print(sequence)
 b = ''.join(map(str,b))
 print('out:')
 print(b)
-"""
+
