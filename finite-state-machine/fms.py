@@ -1,3 +1,6 @@
+import numpy as np
+
+
 class Fsm:
     """
     A base class for all FSM.
@@ -15,11 +18,11 @@ class MyMachine(Fsm):
     def out_log(self):
         self.out.append(int(self.bit1[0] and not self.bit0[0]))
 
-    def bit1_log(self,a):
-        self.bit1[1]=a and self.bit0[0]
+    def bit1_log(self, a):
+        self.bit1[1] = a and self.bit0[0]
 
-    def bit0_log(self,a):
-        self.bit0[1]=not a or self.bit0[0] and not self.bit1[0]
+    def bit0_log(self, a):
+        self.bit0[1] = not a or self.bit0[0] and not self.bit1[0]
 
     def loop(self, insequence):
         for bit in insequence:
@@ -31,16 +34,14 @@ class MyMachine(Fsm):
         return self.out
 
 a = MyMachine()
-import numpy as np
 
-sequence = np.random.randint(2,size=128).tolist()
+sequence = np.random.randint(2, size=128).tolist()
 b = a.loop(sequence)
 
 
 print('in:')
-sequence = ''.join(map(str,sequence))
+sequence = ''.join(map(str, sequence))
 print(sequence)
-b = ''.join(map(str,b))
+b = ''.join(map(str, b))
 print('out:')
 print(b)
-

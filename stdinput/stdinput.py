@@ -4,4 +4,3 @@ for line in fileinput.input():
     i = i + 1
     line = line.strip()
     print("The ", i, " line is: ", line)
-
