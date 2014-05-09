@@ -1,4 +1,0 @@
-            FMS
--------------------------------
-
-A base class used for simulating how finite state machines work in hardware. Uses logic functions and a shift register. 
