@@ -1,4 +1,5 @@
 import fileinput
+
 i = 0
 for line in fileinput.input():
     i = i + 1
