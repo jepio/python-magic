@@ -29,13 +29,16 @@ class MyMachine(Fsm):
     def bit0_log(self, a):
         self.bit0[1] = not a or self.bit0[0] and not self.bit1[0]
 
+    def shift(self):
+        self.bit1[0] = self.bit1[1]
+        self.bit0[0] = self.bit0[1]
+
     def run(self, insequence):
         for bit in insequence:
             self.out_log()
             self.bit1_log(bit)
             self.bit0_log(bit)
-            self.bit1[0] = self.bit1[1]
-            self.bit0[0] = self.bit0[1]
+            self.shift()
         return self.out
 
 
