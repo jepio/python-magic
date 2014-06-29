@@ -13,7 +13,7 @@ class Node(object):
         self.value = value
 
     def insert(self, value):
-        """ Insert a value into the tree. """
+        """ Insert a value into the tree, search for where to put the node. """
         if value > self.value:
             if self.right is None:
                 self.right = Node(value)
