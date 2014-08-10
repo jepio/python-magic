@@ -26,7 +26,6 @@ def solve(array1, silent=False):
     biggest_el = max(array1)
     amount_of_el = len(array1)
     array2 = [biggest_el - i for i in array1]
-
     total = [array1[i]+array2[i] for i in range(amount_of_el)]
 
     fixed = True
@@ -74,4 +73,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    print(__doc__)
