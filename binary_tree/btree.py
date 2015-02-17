@@ -1,9 +1,11 @@
 """ Self written binary tree. """
 
+
 def ancestor(tree, a, b):
     """ Find the value of the lowest common ancestor of `a` and `b`. """
     a, b = sorted((a, b))
     return tree.ancestor(a, b).value
+
 
 class Node(object):
     """
