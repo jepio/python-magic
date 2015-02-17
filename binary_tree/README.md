@@ -14,5 +14,7 @@ tree.insert(3)
 print tree
 ```
 
-Currently I have implemented searching for a value in the tree, inserting a value into the tree, and printing the tree.
+Currently I have implemented searching for a value in the tree, inserting a value into the tree, searching for an ancestor node and printing the tree.
+
+In [test_btree.py](test_btree.py) you will find `py.test` unit tests, of which the implementation passes all. 
 
