@@ -35,15 +35,9 @@ class Node(object):
     def find(self, value):
         """ Return the value if it exists in the tree, else None. """
         if value > self.value:
-            if self.right is None:
-                return None
-            else:
-                return self.right.find(value)
+            return None if self.right is None else self.right.find(value)
         elif value < self.value:
-            if self.left is None:
-                return None
-            else:
-                return self.left.find(value)
+            return None if self.left is None else self.left.find(value)
         else:
             return self
 
