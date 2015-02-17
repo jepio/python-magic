@@ -40,6 +40,15 @@ class Node(object):
         else:
             return self
 
+    def ancestor(self, a, b):
+        """ Return the lowest common ancestor of nodes with values a, b. """
+        if self.value > a and self.value > b:
+            return self.left.ancestor(a, b)
+        elif self.value >= a and self.value <= b:
+            return self
+        else:
+            return self.right.ancestor(a, b)
+
     def __repr__(self):
         """ String representation of the tree. """
         string = []
